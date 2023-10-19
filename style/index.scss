@@ -1,0 +1,51 @@
+$primary: #4DFED1;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+.alert-placeholder {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 3000;
+}
+
+.font-italic {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.5rem;
+}
+
+.card-img-top {
+    height: 250px;
+    width: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+header {
+    background-color: #EEEEEE;
+}
+
+.card {
+    height: 100%;
+}
+
+.nav-link {
+    &:hover {
+        border-bottom: 2px solid black;
+    }
+}
+
+.card {
+    &:hover {
+        transform: scale(1.05);
+        transition-timing-function: ease-out;
+        transition: 200ms;
+
+    }
+}
+
+.active {
+    font-weight: 600;
+    border-bottom: 2px solid black;
+}
