@@ -56,7 +56,6 @@ function getPriceById(id: number, products: Product[]): number {
 
 function calculateTotal(products: Product[]): number {
     let total: number = 0;
-    console.log(products);
     for (let i = 0; i < products.length; i++) {
         total += products[i].price * cartItems[products[i].id.toString()];
     }
@@ -64,12 +63,14 @@ function calculateTotal(products: Product[]): number {
 }
 
 function updateUI(id: string) {
-    console.log("called");
     const counter: HTMLButtonElement = document.getElementById(`cnt${id}`) as HTMLButtonElement;
     const total: HTMLSpanElement = document.getElementById(`total${id}`) as HTMLSpanElement;
     const grandTotal: HTMLSpanElement = document.getElementById('grand-total') as HTMLSpanElement;
+    cartItems = cartService.getCart();
 
-    if (cartItems[id] <= 0) {
+    console.log(cartItems);
+
+    if (cartItems[id]==undefined) {
         const prod: HTMLDivElement = document.getElementById(`prod${id}`) as HTMLDivElement;
         products = products.filter(item => item.id != parseInt(id));
         prod.remove();

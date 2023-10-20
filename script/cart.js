@@ -60,18 +60,18 @@ function getPriceById(id, products) {
 }
 function calculateTotal(products) {
     let total = 0;
-    console.log(products);
     for (let i = 0; i < products.length; i++) {
         total += products[i].price * cartItems[products[i].id.toString()];
     }
     return total;
 }
 function updateUI(id) {
-    console.log("called");
     const counter = document.getElementById(`cnt${id}`);
     const total = document.getElementById(`total${id}`);
     const grandTotal = document.getElementById('grand-total');
-    if (cartItems[id] <= 0) {
+    cartItems = cartService.getCart();
+    console.log(cartItems);
+    if (cartItems[id] == undefined) {
         const prod = document.getElementById(`prod${id}`);
         products = products.filter(item => item.id != parseInt(id));
         prod.remove();

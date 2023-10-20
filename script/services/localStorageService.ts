@@ -23,7 +23,7 @@ export function saveWishList(wishlist: Product[]) : void {
 export function getCartItems() : Record<string, number> {
     try {
         let localData: string | null = localStorage.getItem('cartItems');
-        if(localData!=null) {
+        if(localData!=null && localData.length>0) {
             return JSON.parse(localData);
         }
     } catch(error) {
