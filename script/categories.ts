@@ -51,11 +51,11 @@ function sortProducts(products: Product[]): Product[] {
             return products.sort((prod1, prod2) => {
                 return prod2.rating.rate - prod1.rating.rate;
             })
-        case "plth":
+        case "pplth":
             return products.sort((prod1, prod2) => {
                 return prod1.rating.count - prod2.rating.count;
             })
-        case "phtl":
+        case "pphtl":
             return products.sort((prod1, prod2) => {
                 return prod2.rating.count - prod1.rating.count;
             })
